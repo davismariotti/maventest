@@ -32,4 +32,10 @@ class MainTest {
         int sum = main.addExceptEquals16(-2, -5);
         assertEquals(-7, sum);
     }
+
+    @Test
+    void testWithZero() { // test comment
+        int sum = main.addExceptEquals16(0, -5);
+        assertEquals(-5, sum);
+    }
 }
