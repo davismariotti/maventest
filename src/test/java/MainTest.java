@@ -22,8 +22,14 @@ class MainTest {
 
     }
 
-    @Test()
+    @Test
     void testMain16() {
         assertThrows(RuntimeException.class, () -> main.addExceptEquals16(8, 8));
+    }
+
+    @Test
+    void testNegatives() { // test comment
+        int sum = main.addExceptEquals16(-2, -5);
+        assertEquals(-7, sum);
     }
 }
