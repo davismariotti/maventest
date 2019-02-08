@@ -3,7 +3,8 @@ pipeline {
   stages {
     stage('pr_test') {
       steps {
-        sh 'mvn clean verify'
+        sh 'mvn clean'
+        sh 'mvn compile test'
       }
     }
   }
