@@ -36,6 +36,6 @@ class MainTest {
     @Test
     void testWithZero() { // test comment
         int sum = main.addExceptEquals16(0, -5);
-        assertEquals(1, sum);
+        assertEquals(-5, sum);
     }
 }
