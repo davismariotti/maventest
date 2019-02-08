@@ -30,6 +30,6 @@ class MainTest {
     @Test
     void testNegatives() {
         int sum = main.addExceptEquals16(-2, -5);
-        assertEquals(-4, sum);
+        assertEquals(-7, sum);
     }
 }
