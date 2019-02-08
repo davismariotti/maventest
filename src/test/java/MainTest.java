@@ -28,7 +28,7 @@ class MainTest {
     }
 
     @Test
-    void testNegatives() {
+    void testNegatives() { // test comment
         int sum = main.addExceptEquals16(-2, -5);
         assertEquals(-7, sum);
     }
