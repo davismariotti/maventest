@@ -20,7 +20,7 @@ pipeline {
             }
             post {
                 success {
-                    mvn test
+                    sh 'mvn test'
                 }
             }
         }
