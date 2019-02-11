@@ -2,6 +2,9 @@ import com.davismariotti.maventest.Main;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
@@ -9,10 +12,12 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 class MainTest {
 
     private static Main main;
+    private final static ByteArrayOutputStream output = new ByteArrayOutputStream();
 
     @BeforeAll
     static void setup() {
         main = new Main();
+        System.setOut(new PrintStream(output));
     }
 
     @Test
@@ -43,5 +48,11 @@ class MainTest {
     void testEqualsZero() { // test comment
         int sum = main.addExceptEquals16(-5, 5);
         assertEquals(0, sum);
+    }
+
+    @Test
+    void testMainPrint() {
+        Main.main(new String[0]);
+        assertEquals("This is a test.\n", output.toString());
     }
 }
